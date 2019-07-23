@@ -36,6 +36,6 @@ I would suggest the company focus on 60,16 and 31 as they seem to be the best pr
 
 I also would suggest further work in looking into the other products on these 2 lists as well
 
-<img src='Best_mean_quantity.jpeg'>
+<img src='https://github.com/lraichik/dsc-mod-3-project-online-ds-ft-051319/blob/master/Best_mean_quantity.jpg'>
 
 </details>
