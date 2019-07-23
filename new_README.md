@@ -37,4 +37,5 @@ I would suggest the company focus on 60,16 and 31 as they seem to be the best pr
 I also would suggest further work in looking into the other products on these 2 lists as well
 
 ![](images/Best_mean_quantity.jpeg)
+
 </details>
