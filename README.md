@@ -1,4 +1,4 @@
-# Hypothesis testing with the the Northwind database
+# Hypothesis testing with the Northwind database
 
 Here is an image of the northwind database that this project was done with:
 ![](Northwind_ERD.png)
