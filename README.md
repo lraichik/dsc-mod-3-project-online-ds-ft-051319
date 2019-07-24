@@ -1,86 +1,83 @@
+# Hypothesis testing with the the Northwind database
 
-# Module 3 -  Final Project Specifications
+Here is an image of the northwind database that this project was done with:
+![](Northwind_ERD.png)
 
-## Introduction
+I addressed the 4 questions below and by clicking on each one you can see the respective results and recommendations.  
 
-In this lesson, we'll review all the guidelines and specifications for the final project for Module 3. 
+<details><summary>Question 1: Discount Levels</summary>
+    
+## Question 1
+Does discount amount have a statistically significant effect on the quantity of a product in an order? If so, at what level(s) of discount?
 
-## Objectives
+Null Hypothosis: Discount does not affect quantity of product ordered
+Alternative Hypthosis: Discount does effect the quantity of product ordered
+Alpha: .05
+### Results
+**We can reject the null hypothosis** only with discounts of .01-.06, .15, .2 and .25 while with a 10% discount **we can not reject the null hypothosis** that it is not better then not having a discount
+### Recommendations
+I can recommend using .05%, .15%, .2% and .25% as discount amounts to try and drive sales.
+.05% discounts have a smaller but still statistically significant effect, while .15-.25% discounts have a bigger effect.
+I would also suggest further work looking into 10% discounts to see if more can be found out about it
+</details>
+  
+<details><summary>Question 2: Product sales by product</summary>
+    
+## Question 2
+Which product sells the best per order? Also which are the top 5 products sold per order?
 
-* Understand all required aspects of the Final Project for Module 3
-* Understand all required deliverables
-* Understand what constitutes a successful project
+H0 = all quantity of each product sold per order, means are equal
+Ha = all quantity of each product sold per order, means are not equal
+alpha = .05
+### Results
+**We can reject the null hypothesis in general.**  
+To figure out which product sells the best:  
+The only one that seems to be better then the others with a power signifigance over 80 is the product number 60, which as can be seen below has the highest total ordered and the highest mean per order.
+16 and 31 may also be good ones, the power on them is in the 70's, the signifigance is all with at least 95% signifigance
+### Recommendations
+I would suggest the company focus on 60,16 and 31 as they seem to be the best preforming
 
-### Final Project Summary
+I also would suggest further work in looking into the other products on these 2 lists as well
 
-Another module down--you're half way there!
+<img src='https://github.com/lraichik/dsc-mod-3-project-online-ds-ft-051319/blob/master/Best_mean_quantity.jpg'>
 
-<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-3-project/master/halfway-there.gif'>
+</details>
+  
+<details><summary>Question 3: Product sales by category</summary>
+    
+## Question 3
+Are any categories changing in sales from month to month?
 
-For the culmination of Module 3, you just need to complete the final project!
+H0 = each category sold same quantity’s per month
+Ha = each category sold different quantity’s per month
+alpha = .05
+### Results
+**We can reject the null hypothesis in general.**  
+To figure out which product category sells the best:  
+It appears p1, p3, p4 and p8 are the ones that have the most positive change, this also shows on the graph below as the 4 that have a more positive rate of change
 
-### The Project
+<img src='https://github.com/lraichik/dsc-mod-3-project-online-ds-ft-051319/blob/master/cat_graph.jpg'>
 
-For this project, you'll be working with the Northwind database--a free, open-source dataset created by Microsoft containing data from a fictional company. You probably remember the Northwind database from our section on Advanced SQL. Here's the schema for the Northwind database:
+### Recommendations
+I would suggest focusing on seeing what other products can be sold in categories 1,3,4,8 and at the same time try to get better at selling in the other categories 2,5,6,7
 
-<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-3-project/master/Northwind_ERD_updated.png'>
+</details>
+  
+<details><summary>Question 4: Best employee by sales amount</summary>
+    
+## Question 4
+Which employees sell the most, by dollar amount?
 
-The goal of this project is to test your ability to gather information from a real-world database and use your knowledge of statistical analysis and hypothesis testing to generate analytical insights that can be of value to the company. 
+HO = All employees mean per sale is the same
+Ha = Employees mean per sale is different
+Alpha = .05
+### Results
+**We can reject the null hypothesis in general. However, we can not reject the null hypothesis with regards to which empoloyee is the best.**
+There does not seem to be a best employee based on the p-values and the power levels as well as the small effect sizes.
 
-## The Deliverables
+### Recommendations
+There does not seem to be a best employee based on the p-values and the power levels as well as the small effect sizes.
+This is even though the prior ANOVA test showed that they do have differeneces in means.
+I can not make any recommendations based on this information except to try and do further work into this with a different testing method as there seems to be differences that I may not have been able to figure out with hypothosis testing.
 
-The goal of your project is to query the database to get the data needed to perform a statistical analysis.  In this statistical analysis, you'll need to perform a hypothesis test (or perhaps several) to answer the following question:
-
-**_Does discount amount have a statistically significant effect on the quantity of a product in an order? If so, at what level(s) of discount?_**
-
-In addition to answering this question with a hypothesis test, you will also need to come up with **_at least 3 other hypotheses to test on your own_**.  These can by anything that you think could be imporant information for the company. 
-
-For this hypothesis, be sure to specify both the **_null hypothesis_** and the **_alternative hypothesis_** for your question.  You should also specify if this is one-tail or a two-tail test. 
-
-To complete this project, you will need to turn in the following 3 deliverables:
-
-1. A **_Jupyter Notebook_** containing any code you've written for this project. 
-2. A **_Blog Post_** explaining your process, methodology, and findings.  
-3. An **_"Executive Summary" PowerPoint Presentation_** that explains the hypothesis tests you ran, your findings, and their relevance to company stakeholders.  
-
-### Jupyter Notebook Must-Haves
-
-For this project, your jupyter notebook should meet the following specifications:
-
-**_Organization/Code Cleanliness_**
-
-* The notebook should be well organized, easy to follow, and code is commented where appropriate.  
-<br>  
-    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code. All functions have docstrings that act as professional-quality documentation.  
-<br>      
-* The notebook is written to technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.  
-<br>    
-* Any SQL code written to source data should also be included.  
-
-**_Findings_**
-
-* Your notebook should clearly show how you arrived at your results for each hypothesis test, including how you calculated your p-values.   
-<br>
-* You should also include any other statistics that you find relevant to your analysis, such as effect size. 
-
-### Blog Post Must-Haves
-
-Your blog post should include everything from how you identified what tables contained the information you need, to how you retrieved it using SQL (and any challenges you ran into while doing so), as well as your methodology and results for your hypothesis tests. 
-
-**_NOTE:_**  This blog post is your way of showcasing the work you've done on this project--chances are it will soon be read by a recruiter or hiring manager! Take the time to make sure that you craft your story well, and clearly explain your process and findings in a way that clearly shows both your technical expertise **_and_** your ability to communicate your results!
-
-### Executive Summary Must-Haves
-
-Your presentation should:
-
-* Contain between 5-10 professional quality slides detailing:
-<br>  
-    * A high-level overview of your methodology  
-    <br>  
-    * The results of your hypothesis tests  
-    <br>  
-    * Any real-world recommendations you would like to make based on your findings (ask yourself--why should the executive team care about what you found? How can your findings help the company?)  
-    <br>  
-* Take no more than 5 minutes to present  
-<br>  
-* Avoid technical jargon and explain results in a clear, actionable way for non-technical audiences.  
+</details>
